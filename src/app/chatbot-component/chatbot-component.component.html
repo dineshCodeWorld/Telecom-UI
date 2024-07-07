@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<div class="chatbot-container">
+  <!-- Chatbot Icon -->
+  <div class="chatbot-icon" (click)="toggleChat()">
+    <img src="./assets/images/chatbot.png" alt="Chatbot Icon">
+  </div>
+
+  <!-- Chat Screen -->
+  <div class="chat-screen" *ngIf="isChatOpen">
+    <div class="chat-header">
+      <span style="color: white">ChatBot</span>
+      <button (click)="toggleChat()">X</button>
+    </div>
+    <div class="chat-messages">
+      <div *ngFor="let msg of messages" [ngClass]="{'user-message': msg.isUser, 'bot-message': !msg.isUser}">
+        {{ msg.text }}
+      </div>
+    </div>
+    <div class="chat-input">
+      <input [(ngModel)]="prompt" placeholder="Ask something..." (keyup.enter)="sendPrompt()"/>
+      <button (click)="sendPrompt()" class="send-button">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

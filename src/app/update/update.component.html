@@ -1,0 +1,188 @@
+<app-header></app-header>
+
+<!-- <div class="main-content">
+   <div class="container col-12 col-sm-6">
+     <div class="card panel-default">
+       <div class="card-body">
+         <h3 class="card-title text-center">Update</h3>
+         <form [formGroup]="updateForm">
+           <div class="ui-fluid p-formgrid p-grid">
+             <div class="p-field p-grid col-12">
+               <div class="col-sm-3 col-4">
+                 <label for="name">Name </label>&nbsp;<span class="red">*</span></div>
+               <div class="col-sm-9 col-8">
+                 <input type="text" pInputText name="name" formControlName="name">
+                 <div
+                   *ngIf="(updateForm.controls['name'].errors && (updateForm.controls['name'].dirty || updateForm.controls['name'].touched))"
+                   class="red">
+                   Name is required
+                 </div>
+               </div>
+ 
+             </div>
+             <div class="p-field p-grid col-12">
+               <div class="col-sm-3 col-4">
+                 <label for="password">Password </label>&nbsp;<span class="red">*</span></div>
+               <div class="col-sm-9 col-8">
+                 <input type="password" pInputText name="password" formControlName="password">
+                 <div
+                   *ngIf="(updateForm.controls['password'].errors && (updateForm.controls['password'].dirty || updateForm.controls['password'].touched))"
+                   class="red">
+                   Password is required
+                 </div>
+               </div>
+             </div>
+             <div class="p-field p-grid col-12">
+               <div class="col-sm-3 col-4">
+                 <label for="age">Age </label>&nbsp;<span class="red">*</span></div>
+               <div class="col-sm-9 col-8">
+                 <input type="number" pInputText name="age" formControlName="age">
+                 <div
+                   *ngIf="(updateForm.controls['age'].errors && (updateForm.controls['age'].dirty || updateForm.controls['age'].touched))"
+                   class="red">
+                   Age is required
+                 </div>
+               </div>
+             </div>
+             <div class="p-field p-grid col-12">
+               <div class="col-sm-3 col-4">
+                 <label for="address">Address </label>&nbsp;<span class="red">*</span></div>
+               <div class="col-sm-9 col-8">
+                 <input type="text"  pInputText name="address" formControlName="address">
+                 <div
+                   *ngIf="(updateForm.controls['address'].errors && (updateForm.controls['address'].dirty || updateForm.controls['address'].touched))"
+                   class="red">
+                   Address is required
+                 </div>
+               </div>
+             </div>
+ 
+
+           </div>
+           <div class="p-field text-center">
+             <button type="button" pButton [disabled]="!updateForm.valid" (click)="updateProfile()"
+               label="Update"></button>
+           </div>
+         </form>
+         <div class="text-success">{{response}}</div>
+         <div class="text-danger">{{errorMsg}}</div>
+       </div>
+     </div>
+   </div> -->
+
+
+<div class="container" style="margin-top: 100px; padding-right: 570px; margin-left: 450px; ">
+  <div class="card" style="background-color: rgb(42, 77, 165);">
+      <h3 class="card-title text-center" style="color: white;">Update</h3>
+      <div class="card-body text-center">
+        <div >
+            <form style="width: 500px;" [formGroup]="updateForm" (ngSubmit)="updateProfile()">
+                <div class="form-group">
+                    <input type="text" id="name" formControlName="name" class="form-control"
+                        placeholder="Enter Name..">
+                    <div *ngIf="updateForm.controls.name['invalid'] && updateForm.controls.name['dirty']">
+                        <div *ngIf="updateForm.controls['name'].errors?.required" class="error-message"
+                            id="NameError" style="color: #ff0000;">Field Required</div>
+                        <div *ngIf="updateForm.controls['name'].errors?.pattern" class="error-message"
+                            id="NameError">Name should be 2 to 15 characteters</div>
+                    </div>
+                </div>
+          
+                <div class="form-group">
+                  <input type="number" id="age" formControlName="age" class="form-control"
+                      placeholder="Enter Age..">
+              </div>
+    
+              <div class="form-group">
+                <input type="text" id="address" formControlName="address" class="form-control"
+                    placeholder="Enter Address..">
+            </div>
+    
+                <div class="form-group">
+                    <input type="password" id="password" formControlName="password" class="form-control"
+                        placeholder="Enter Password..">
+                    <div *ngIf="updateForm.controls['password'].invalid && updateForm.controls['password'].dirty">
+                        <div *ngIf="updateForm.controls['password'].errors?.required" style="color: red;" class="error-message" id="passwordError">
+                            Field Required</div>
+                        <div *ngIf="updateForm.controls['password'].errors?.pattern" class="error-message" id="passwordError">
+                            password shouls contain 5 to 15 characters</div>
+                    </div>
+                </div>
+                <p class="response-message" id="response" style="color: white;">{{response}}</p>
+                <button type="submit" style="color: white;" class="bg bg-warning" >Update
+                </button>
+            </form>
+        </div>
+
+     </div>
+  </div>
+</div>
+<!-- 
+   <!DOCTYPE html>
+<html lang="en"> -->
+
+<!-- <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .background {
+            background: url('./assets/olivebackground.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="background">
+        <h1 class="register-heading"> Update</h1>
+        <form style="width: 500px;" [formGroup]="updateForm" (ngSubmit)="updateProfile()">
+            <div class="form-group">
+                <input type="text" id="Name" formControlName="Name" class="form-control"
+                    placeholder="Enter Name..">
+                <div *ngIf="updateForm.controls.Name['invalid'] && updateForm.controls.Name['dirty']">
+                    <div *ngIf="updateForm.controls['Name'].errors?.required" class="error-message"
+                        id="NameError">Field Required</div>
+                    <div *ngIf="updateForm.controls['Name'].errors?.pattern" class="error-message"
+                        id="NameError">Name should be 2 to 15 characteters</div>
+                </div>
+            </div>
+      
+            <div class="form-group">
+              <input type="number" id="Age" formControlName="Age" class="form-control"
+                  placeholder="Enter Age..">
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="Address" formControlName="Age" class="form-control"
+                placeholder="Enter Address..">
+        </div>
+
+            <div class="form-group">
+                <input type="password" id="Password" formControlName="Password" class="form-control"
+                    placeholder="Enter Password..">
+                <div *ngIf="updateForm.controls['Password'].invalid && updateForm.controls['Password'].dirty">
+                    <div *ngIf="updateForm.controls['Password'].errors?.required" class="error-message" id="passwordError">
+                        Field Required</div>
+                    <div *ngIf="updateForm.controls['Password'].errors?.pattern" class="error-message" id="passwordError">
+                        password shouls contain 5 to 15 characters</div>
+                </div>
+            </div>
+
+
+            <p class="response-message" id="response">{{response}}</p>
+            <button type="submit" class="btn-register" [disabled]="updateForm.invalid ">Update
+            </button>
+        </form>
+    </div>
+</body> -->
+

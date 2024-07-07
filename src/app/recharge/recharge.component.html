@@ -1,0 +1,125 @@
+<app-header></app-header>
+
+<!-- <div class="main-content">
+   <div class="container col-12 col-sm-6">
+      <div class="card panel-default">
+         <div class="card-body">
+            <h3 class="card-title text-center">Recharge</h3><br>
+            <form [formGroup]="registerForm">
+               <div class="ui-fluid p-formgrid p-grid">
+                  <div class="p-field p-grid col-12">
+                     <div class="col-sm-3 col-4">
+                        <label for="phoneNo">Phone No </label><span class="red">*</span>
+                     </div>
+                     <div class="col-sm-9 col-8">
+                        <input [(ngModel)]="phoneNo"  type="number" name="phoneNo"  formControlName="phoneNo">
+                     </div>
+                  </div>
+                  <div class="p-field p-grid col-12">
+                        <div class="col-sm-3 col-4">
+                           <label for="plan">Plan</label>&nbsp;<span class="red">*</span>
+                        </div>
+                        <div class="col-sm-9 col-8">
+                           <fieldset formGroupName="currentPlan">
+                              <p-dropdown [options]="plans" size="100" formControlName="planId" [(ngModel)]="plan"   placeholder="Select a  Plan">
+                              </p-dropdown>
+                           </fieldset>
+                        </div>
+                  </div>
+                  <div class="p-field p-grid col-12">
+                     <div class="col-sm-3 col-4">
+                        <label for="account">Account</label>&nbsp;<span class="red">*</span>
+                     </div>
+                     <div class="col-sm-9 col-8">
+                        <fieldset formGroupName="accountName">
+                           <p-dropdown [(ngModel)]="account" formControlName="actname"   [options]="accounts" size="100" placeholder="Select a  Account">
+                           </p-dropdown>
+                        </fieldset>
+                     </div>
+               </div>
+
+               </div>
+               <div class="p-field text-center">
+                  <button class="bg bg-danger" style="border-radius: 5px;" type="button" (click)="recharge()" label="Recharge">Recharge</button>
+               </div>
+            </form>
+            <div class="text-success">{{rcmsg}}</div>
+            <div class="text-danger">{{errorMsg}}</div>
+         </div>
+      </div>
+   </div>
+</div> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      body {
+          background-color: #f5f5f5;
+          font-family: 'Arial', sans-serif;
+      }
+      .card {
+          border: none;
+          border-radius: 15px;
+          transition: transform 0.3s ease-in-out;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .card:hover {
+          transform: scale(1.05);
+      }
+      .card-body {
+          padding: 30px;
+          color: #fff;
+          text-align: center;
+      }
+      .card-footer {
+          background-color: transparent;
+          border-top: none;
+          text-align: center;
+          padding: 15px 30px;
+      }
+      .card-title {
+          margin: 0;
+          font-size: 1.5rem;
+          color: #333;
+          font-weight: bold;
+      }
+      .card-text {
+          font-size: 1.1rem;
+          margin-bottom: 0;
+      }
+      .container {
+          margin-top: 50px;
+      }
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <section>
+      <div class="container">
+          <div class="row justify-content-center">
+
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                  <div class="card">
+                      <div class="card-body" style="background-color: #e22b3a;">
+                          <p class="card-text">Note: this feature is under development stage, Please try after some time .<img style="height: 50px;" src="./assets/monitoring.png"/></p>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </section>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+ </html>

@@ -1,0 +1,104 @@
+<app-header></app-header>
+
+
+<!-- <div class="main-content">
+  <div class="container col-12 col-sm-6">
+    <form [formGroup]="addFriendForm">
+      <div class="segment">
+        <h1>Add Friend</h1>
+      </div>
+      <label>
+        <input type="number" placeholder="Enter Phone Number" formControlName="friendAndFamily" />
+        <div [ngStyle]="{color: 'red', fontSize: '120%', fontWeight: '700'}"
+          *ngIf="(addFriendForm.controls['friendAndFamily'].errors && (addFriendForm.controls['friendAndFamily'].dirty || addFriendForm.controls['friendAndFamily'].touched))">
+          <div *ngIf="addFriendForm.controls.friendAndFamily.errors.required">Phone No is required</div>
+          <div *ngIf="addFriendForm.controls.friendAndFamily.errors.pattern">Phone No should be exactly 10 digits and starts with 7,8 or 9</div>
+        </div>
+      </label>
+      <div [ngStyle]="{textAlign: 'center'}">
+        <button type="button" [disabled]="!addFriendForm.valid" (click)="addFriend()">
+          <i class="icon pi pi-user-plus"></i>
+          <span>Add Friend</span>
+        </button>
+        <div class="text-danger" [ngStyle]="{color: 'red', fontSize: '120%', fontWeight: '700'}"> {{errMsg}} </div>
+        <div class="text-success" [ngStyle]="{color: 'green', fontSize: '120%', fontWeight: '700'}">{{successMsg}}</div>
+      </div>      
+    </form>
+  </div><br>
+</div> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      body {
+          background-color: #f5f5f5;
+          font-family: 'Arial', sans-serif;
+      }
+      .card {
+          border: none;
+          border-radius: 15px;
+          transition: transform 0.3s ease-in-out;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .card:hover {
+          transform: scale(1.05);
+      }
+      .card-body {
+          padding: 30px;
+          color: #fff;
+          text-align: center;
+      }
+      .card-footer {
+          background-color: transparent;
+          border-top: none;
+          text-align: center;
+          padding: 15px 30px;
+      }
+      .card-title {
+          margin: 0;
+          font-size: 1.5rem;
+          color: #333;
+          font-weight: bold;
+      }
+      .card-text {
+          font-size: 1.1rem;
+          margin-bottom: 0;
+      }
+      .container {
+          margin-top: 50px;
+      }
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <section>
+      <div class="container">
+          <div class="row justify-content-center">
+
+              <div class="col-12 col-md-6 col-lg-4 mb-4">
+                  <div class="card">
+                      <div class="card-body" style="background-color: #e22b3a;">
+                          <p class="card-text">Note: this feature is under development stage, Please try after some time  .<img style="height: 50px;" src="./assets/monitoring.png"/></p>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </section>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
